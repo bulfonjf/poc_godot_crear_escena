@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://componentes/menu_unidad/menu_unidad.gd" type="Script" id=1]
+[ext_resource path="res://componentes/componente_controlador.gd" type="Script" id=2]
+
+[node name="menu_unidad" type="Panel"]
+visible = false
+margin_right = 128.0
+margin_bottom = 131.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Atacar" type="Button" parent="VBoxContainer"]
+visible = false
+margin_right = 128.0
+margin_bottom = 63.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "atacar"
+script = ExtResource( 2 )
+
+[node name="Mover" type="Button" parent="VBoxContainer"]
+visible = false
+margin_top = 67.0
+margin_right = 128.0
+margin_bottom = 131.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "mover"
+script = ExtResource( 2 )
+[connection signal="pressed" from="VBoxContainer/Atacar" to="." method="_on_atacar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Mover" to="." method="_on_mover_pressed"]

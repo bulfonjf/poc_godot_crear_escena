@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
+
+[application]
+
+config/name="POC_Constructor_Escenas"
+run/main_scene="res://EscenaPrincipal.tscn"
+
+[autoload]
+
+Comandos="*res://contextos/comandos.gd"
+Data="*res://contextos/data.gd"
+Diccionario="*res://auxiliares/diccionario.gd"
+SeleccionUnidad="*res://procesador_acciones/seleccion_unidad.gd"
+CreadorEscena="*res://creador_de_escena/creador_escena.gd"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "gut" )
+
+[rendering]
+
+environment/default_environment="res://default_env.tres"
