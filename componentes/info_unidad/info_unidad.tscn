@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://componentes/info_unidad/info_unidad.gd" type="Script" id=1]
+[ext_resource path="res://componentes/componente_controlador.gd" type="Script" id=2]
+
+[node name="info_unidad" type="VBoxContainer"]
+margin_top = 17.0
+margin_right = 116.0
+margin_bottom = 102.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="vida" type="HBoxContainer" parent="."]
+margin_right = 116.0
+margin_bottom = 14.0
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="vida"]
+margin_right = 56.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "Vida"
+
+[node name="Label2" type="Label" parent="vida"]
+margin_left = 60.0
+margin_right = 116.0
+margin_bottom = 14.0
+size_flags_horizontal = 3
+text = "100"
+align = 2
+
+[node name="items" type="VBoxContainer" parent="."]
+margin_top = 18.0
+margin_right = 116.0
+margin_bottom = 103.0
+script = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="items"]
+margin_right = 116.0
+margin_bottom = 14.0
+text = "items"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="items"]
+margin_top = 18.0
+margin_right = 116.0
+margin_bottom = 85.0
+
+[node name="Control" type="Control" parent="items/HBoxContainer"]
+margin_right = 18.0
+margin_bottom = 67.0
+rect_min_size = Vector2( 18, 0 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="items/HBoxContainer"]
+margin_left = 22.0
+margin_right = 68.0
+margin_bottom = 67.0
+
+[node name="Label2" type="Label" parent="items/HBoxContainer/VBoxContainer"]
+margin_right = 46.0
+margin_bottom = 14.0
+text = "espada"
+
+[node name="Label" type="Label" parent="items/HBoxContainer/VBoxContainer"]
+margin_top = 18.0
+margin_right = 46.0
+margin_bottom = 49.0
+text = "escudo
+"
+
+[node name="Label3" type="Label" parent="items/HBoxContainer/VBoxContainer"]
+margin_top = 53.0
+margin_right = 46.0
+margin_bottom = 67.0

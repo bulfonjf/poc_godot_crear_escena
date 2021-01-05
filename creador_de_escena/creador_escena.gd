@@ -1,7 +1,7 @@
 extends Node
 
 # Componentes
-var mostrar_componente_key = "mostrar"
+const mostrar_componente_key = "mostrar"
 var menu_unidad = "menu_unidad"
 
 # Signals

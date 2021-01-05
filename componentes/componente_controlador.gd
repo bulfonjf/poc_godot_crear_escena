@@ -20,8 +20,8 @@ func mostrar(_configuracion = {}):
 		var hijo = instance_from_id(hijo_id)
 		var hijo_nombre = hijo.name.to_lower()
 		if configuracion.has(hijo_nombre):
-			if configuracion[hijo_nombre]:
-				hijo.mostrar()
+			if configuracion[hijo_nombre].mostrar:
+				hijo.mostrar(configuracion[hijo_nombre])
 			else:
 				hijo.ocultar()
 

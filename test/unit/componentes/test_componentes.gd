@@ -1,51 +1,91 @@
 extends "res://addons/gut/test.gd"
 
 var sut
+const mostrar_componente_key = "mostrar"
+
+const SUT_PATH = "res://componentes/componente_controlador.gd"
 
 func after_each():
     autoqfree(sut)
 
-func test_mostrar_menu_unidad():
-    sut = load("res://componentes/menu_unidad/menu_unidad.tscn").instance()
-    var atacar_boton = sut.get_node("VBoxContainer/Atacar")
-    var mover_boton = sut.get_node("VBoxContainer/Mover")
+func test_agregar_hijo():
+    sut = load(SUT_PATH).new()
+    var hijo = load(SUT_PATH).new()
+    
+    sut.agregar_hijo(hijo)
 
-    get_tree().get_root().add_child(sut)
-    sut.mostrar({
-        "atacar": true,
-        "mover": true
-    })
+    assert_has(sut.hijos, hijo)
+    autoqfree(hijo)
 
-    assert_true(sut.visible)
-    assert_true(atacar_boton.visible)
-    assert_true(mover_boton.visible)
+func test_ocultar():
+    sut = load(SUT_PATH).new()
 
-func test_mostrar_solo_boton_atacar():
-    sut = load("res://componentes/menu_unidad/menu_unidad.tscn").instance()
-    var atacar_boton = sut.get_node("VBoxContainer/Atacar")
-    var mover_boton = sut.get_node("VBoxContainer/Mover")
+    sut.ocultar()
 
-    get_tree().get_root().add_child(sut)
-    sut.mostrar({
-        "atacar": true,
-        "mover": false
-    })
+    assert_false(sut.visible)
+
+func test_mostrar():
+    sut = load(SUT_PATH).new()
+
+    sut.mostrar()
 
     assert_true(sut.visible)
-    assert_true(atacar_boton.visible)
-    assert_false(mover_boton.visible)
 
-func test_mostrar_solo_boton_mover():
-    sut = load("res://componentes/menu_unidad/menu_unidad.tscn").instance()
-    var atacar_boton = sut.get_node("VBoxContainer/Atacar")
-    var mover_boton = sut.get_node("VBoxContainer/Mover")
+func test_mostrar_hijo():
+    sut = load(SUT_PATH).new()
+    
+    # Preparar Hijo
+    var hijo = load(SUT_PATH).new()
+    hijo.name = "hijo"
+    hijo.hide()
 
-    get_tree().get_root().add_child(sut)
-    sut.mostrar({
-        "atacar": false,
-        "mover": true
-    })
+    # Configuracion para el root del componente
+    var configurcion = {
+        hijo.name: {
+            mostrar_componente_key: true
+        }
+    }
+
+    sut.agregar_hijo(hijo.get_instance_id())
+
+    sut.mostrar(configurcion)
 
     assert_true(sut.visible)
-    assert_false(atacar_boton.visible)
-    assert_true(mover_boton.visible)
+    assert_true(hijo.visible)
+
+    autoqfree(hijo)
+
+func test_mostrar_nieto():
+    sut = load(SUT_PATH).new()
+
+    # Preparar Nieto
+    var nieto = load(SUT_PATH).new()
+    nieto.name = "nieto"
+    nieto.hide()
+    
+    # Preparar Hijo
+    var hijo = load(SUT_PATH).new()    
+    hijo.agregar_hijo(nieto.get_instance_id())
+    hijo.name = "hijo"
+    hijo.hide()
+    
+    # Configuracion para el root del componente
+    var configurcion = {
+        hijo.name: {
+            mostrar_componente_key: true,
+            nieto.name: {
+                mostrar_componente_key: true
+            }
+        }   
+    }
+    sut.agregar_hijo(hijo.get_instance_id())
+    
+
+    sut.mostrar(configurcion)
+
+    assert_true(sut.visible)
+    assert_true(hijo.visible)
+    assert_true(nieto.visible)
+
+    autoqfree(hijo)
+    autoqfree(nieto)
