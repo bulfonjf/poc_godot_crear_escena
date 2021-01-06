@@ -1,7 +1,7 @@
 extends "res://addons/gut/test.gd"
 
 var sut
-const mostrar_componente_key = "mostrar"
+const mostrar_componente = "mostrar"
 
 func after_each():
     autoqfree(sut)
@@ -32,10 +32,10 @@ func test_mostrar_menu_unidad():
     get_tree().get_root().add_child(sut)
     sut.mostrar({
         "atacar": {
-            mostrar_componente_key: true
+            mostrar_componente: true
         },
         "mover": {
-            mostrar_componente_key: true
+            mostrar_componente: true
         }
     })
 
@@ -51,10 +51,10 @@ func test_mostrar_solo_boton_atacar():
     get_tree().get_root().add_child(sut)
     sut.mostrar({
         "atacar": {
-            mostrar_componente_key: true
+            mostrar_componente: true
         },
         "mover": {
-            mostrar_componente_key: false
+            mostrar_componente: false
         }
     })
 
@@ -70,10 +70,10 @@ func test_mostrar_solo_boton_mover():
     get_tree().get_root().add_child(sut)
     sut.mostrar({
         "atacar": {
-            mostrar_componente_key: false
+            mostrar_componente: false
         },
         "mover": {
-            mostrar_componente_key: true
+            mostrar_componente: true
         }
     })
 

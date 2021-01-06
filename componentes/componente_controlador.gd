@@ -28,7 +28,8 @@ func mostrar(_configuracion = {}):
 	self.show()
 
 func ocultar():
-	for hijo in self.get_children():
+	for hijo_id in hijos:
+		var hijo = instance_from_id(hijo_id)
 		hijo.ocultar()
 		
 	self.hide()

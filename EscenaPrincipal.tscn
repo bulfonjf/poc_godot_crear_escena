@@ -1,29 +1,24 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://orquestador.gd" type="Script" id=1]
-[ext_resource path="res://recursos/fighter_sprite.png" type="Texture" id=2]
+[ext_resource path="res://unidad/unidad.tscn" type="PackedScene" id=2]
 [ext_resource path="res://componentes/menu_unidad/menu_unidad.tscn" type="PackedScene" id=3]
-[ext_resource path="res://unidad.gd" type="Script" id=4]
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 132.63, 43.8955 )
+[ext_resource path="res://componentes/menu_lateral_mapa/menu_lateral_mapa.tscn" type="PackedScene" id=4]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
 
 [node name="menu_unidad" parent="." instance=ExtResource( 3 )]
+margin_left = 217.0
+margin_top = 44.5
+margin_right = 345.0
+margin_bottom = 175.5
 
-[node name="unidad" type="KinematicBody2D" parent="."]
-position = Vector2( 164.5, 43.5 )
-z_index = 1
-input_pickable = true
-script = ExtResource( 4 )
+[node name="unidad_1" parent="." instance=ExtResource( 2 )]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="unidad"]
-shape = SubResource( 1 )
+[node name="unidad_2" parent="." instance=ExtResource( 2 )]
+visible = false
+position = Vector2( 230.5, 44.5 )
 
-[node name="sprite" type="Sprite" parent="unidad"]
-position = Vector2( 0, -0.5 )
-texture = ExtResource( 2 )
-hframes = 3
-[connection signal="input_event" from="unidad" to="unidad" method="_on_unidad_input_event"]
+[node name="menu_lateral_mapa" parent="." instance=ExtResource( 4 )]
+visible = false

@@ -1,7 +1,7 @@
 extends "res://addons/gut/test.gd"
 
 var sut
-const mostrar_componente_key = "mostrar"
+const mostrar_componente = "mostrar"
 
 const SUT_PATH = "res://componentes/componente_controlador.gd"
 
@@ -42,7 +42,7 @@ func test_mostrar_hijo():
     # Configuracion para el root del componente
     var configurcion = {
         hijo.name: {
-            mostrar_componente_key: true
+            mostrar_componente: true
         }
     }
 
@@ -72,9 +72,9 @@ func test_mostrar_nieto():
     # Configuracion para el root del componente
     var configurcion = {
         hijo.name: {
-            mostrar_componente_key: true,
+            mostrar_componente: true,
             nieto.name: {
-                mostrar_componente_key: true
+                mostrar_componente: true
             }
         }   
     }

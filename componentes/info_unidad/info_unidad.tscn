@@ -17,13 +17,13 @@ margin_right = 116.0
 margin_bottom = 14.0
 script = ExtResource( 2 )
 
-[node name="Label" type="Label" parent="vida"]
+[node name="key" type="Label" parent="vida"]
 margin_right = 56.0
 margin_bottom = 14.0
 size_flags_horizontal = 3
 text = "Vida"
 
-[node name="Label2" type="Label" parent="vida"]
+[node name="value" type="Label" parent="vida"]
 margin_left = 60.0
 margin_right = 116.0
 margin_bottom = 14.0
@@ -34,7 +34,7 @@ align = 2
 [node name="items" type="VBoxContainer" parent="."]
 margin_top = 18.0
 margin_right = 116.0
-margin_bottom = 103.0
+margin_bottom = 36.0
 script = ExtResource( 2 )
 
 [node name="Label" type="Label" parent="items"]
@@ -45,31 +45,12 @@ text = "items"
 [node name="HBoxContainer" type="HBoxContainer" parent="items"]
 margin_top = 18.0
 margin_right = 116.0
-margin_bottom = 85.0
+margin_bottom = 18.0
 
 [node name="Control" type="Control" parent="items/HBoxContainer"]
 margin_right = 18.0
-margin_bottom = 67.0
 rect_min_size = Vector2( 18, 0 )
 
-[node name="VBoxContainer" type="VBoxContainer" parent="items/HBoxContainer"]
+[node name="items_list" type="VBoxContainer" parent="items/HBoxContainer"]
 margin_left = 22.0
-margin_right = 68.0
-margin_bottom = 67.0
-
-[node name="Label2" type="Label" parent="items/HBoxContainer/VBoxContainer"]
-margin_right = 46.0
-margin_bottom = 14.0
-text = "espada"
-
-[node name="Label" type="Label" parent="items/HBoxContainer/VBoxContainer"]
-margin_top = 18.0
-margin_right = 46.0
-margin_bottom = 49.0
-text = "escudo
-"
-
-[node name="Label3" type="Label" parent="items/HBoxContainer/VBoxContainer"]
-margin_top = 53.0
-margin_right = 46.0
-margin_bottom = 67.0
+margin_right = 22.0
