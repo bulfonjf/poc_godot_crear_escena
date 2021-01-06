@@ -12,3 +12,6 @@ func _on_click_unidad(accion):
 	Comandos.agregar_accion(accion)
 	Comandos.procesar_accion()
 	
+func _on_click_atacar(accion):
+	Comandos.agregar_accion(accion)
+	Comandos.procesar_accion()

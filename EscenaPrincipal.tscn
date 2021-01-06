@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://orquestador.gd" type="Script" id=1]
 [ext_resource path="res://unidad/unidad.tscn" type="PackedScene" id=2]
 [ext_resource path="res://componentes/menu_unidad/menu_unidad.tscn" type="PackedScene" id=3]
 [ext_resource path="res://componentes/menu_lateral_mapa/menu_lateral_mapa.tscn" type="PackedScene" id=4]
+[ext_resource path="res://componentes/ataque/ataque.tscn" type="PackedScene" id=5]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 1 )
@@ -22,3 +23,9 @@ position = Vector2( 230.5, 44.5 )
 
 [node name="menu_lateral_mapa" parent="." instance=ExtResource( 4 )]
 visible = false
+
+[node name="ataque" parent="." instance=ExtResource( 5 )]
+margin_left = 151.5
+margin_top = 232.5
+margin_right = 332.5
+margin_bottom = 272.5

@@ -5,6 +5,7 @@ var procesadores_de_acciones = []
 func _ready():
 	procesadores_de_acciones = [
 		load("res://procesador_acciones/seleccion_unidad.gd").new(),
+		load("res://procesador_acciones/ataque.gd").new()
 	]
 
 func agregar_accion(accion):
@@ -28,8 +29,8 @@ func obtener_path_acciones():
 func ejecutar_primer_procesador_que_aplique(path_acciones):
 	var procesadores = self.obtener_procesadores()
 	for pa in procesadores:
-		var valido = pa.procesar(path_acciones)
-		if valido:
+		var aplica = pa.procesar(path_acciones)
+		if aplica:
 			break
 
 func borrar_acciones():
