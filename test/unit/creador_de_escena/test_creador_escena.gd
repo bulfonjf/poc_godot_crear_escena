@@ -5,6 +5,9 @@ func test_mostrar_menu_unidad():
 
     watch_signals(CreadorEscena)
 
-    CreadorEscena.mostrar_menu_unidad()
+    CreadorEscena\
+    .mostrar_menu_unidad()\
+    .build()
+
 
     assert_signal_emitted(CreadorEscena, target_signal)

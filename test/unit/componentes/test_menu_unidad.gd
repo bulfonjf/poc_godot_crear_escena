@@ -17,7 +17,9 @@ func test_preparar_componente_desde_senial():
     
     watch_signals(CreadorEscena)
 
-    CreadorEscena.mostrar_menu_unidad()
+    CreadorEscena\
+    .mostrar_menu_unidad()\
+    .build()
 
     assert_signal_emitted(CreadorEscena, target_signal)
     assert_true(sut.visible)
