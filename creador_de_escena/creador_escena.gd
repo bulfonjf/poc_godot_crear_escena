@@ -13,12 +13,17 @@ signal mostrar_menu_lateral_mapa_signal(_configuracion)
 signal configurar_ataque(_configuracion)
 
 # Escena a construir, con valores por defecto
-var escena = {
+var escena_por_defecto = {
     menu_unidad: {mostrar_componente: false},
     menu_lateral_mapa: {mostrar_componente: false},
     ataque: {mostrar_componente: false}
 }
+var escena = {}
 
+func iniciar() -> Node:
+    escena = escena_por_defecto.duplicate()
+    return self
+    
 func mostrar_menu_unidad() -> Node:
     escena[menu_unidad] = {mostrar_componente: true}
     return self

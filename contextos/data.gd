@@ -13,6 +13,9 @@ func segunda_accion():
 func tercera_accion():
 	return devolver_accion(3)
 	
+func ultima_accion():
+	var ultima_acion = Data.acciones.size()
+	return devolver_accion(ultima_acion)
 
 func devolver_accion(key):
 	if acciones.has(key):

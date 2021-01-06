@@ -5,7 +5,8 @@ var procesadores_de_acciones = []
 func _ready():
 	procesadores_de_acciones = [
 		load("res://procesador_acciones/seleccion_unidad.gd").new(),
-		load("res://procesador_acciones/ataque.gd").new()
+		load("res://procesador_acciones/ataque.gd").new(),
+		load("res://procesador_acciones/mover.gd").new()
 	]
 
 func agregar_accion(accion):
@@ -15,6 +16,9 @@ func agregar_accion(accion):
 		print("ERROR: Data.acciones ya tiene la nueva key que se iba a agregar")
 	else:
 		Data.acciones[nueva_accion_key] = accion
+
+func corregir_path(_aciones):
+	Data.acciones = _aciones
 
 func procesar_accion():
 	var path_acciones = self.obtener_path_acciones()

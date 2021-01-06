@@ -19,6 +19,7 @@ func mostrar_escena():
 	Comandos.seleccionar_unidad(unidad_a_seleccionar_id)
 	
 	CreadorEscena\
+	.iniciar()\
 	.mostrar_menu_unidad()\
 	.mostrar_info_unidad(unidad_a_seleccionar_id)\
 	.build()

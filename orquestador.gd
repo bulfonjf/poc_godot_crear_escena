@@ -9,9 +9,15 @@ func _unhandled_input(event):
 	pass
 
 func _on_click_unidad(accion):
-	Comandos.agregar_accion(accion)
-	Comandos.procesar_accion()
+	# si queres hacer algo antes lo haces aca
+	procesar_accion(accion)
 	
 func _on_click_atacar(accion):
+	procesar_accion(accion)
+
+func _on_click_mover(accion):
+	procesar_accion(accion)
+
+func procesar_accion(accion):
 	Comandos.agregar_accion(accion)
 	Comandos.procesar_accion()

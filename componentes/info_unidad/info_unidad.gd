@@ -27,6 +27,11 @@ func mostrar(_configuracion = {}):
 	# Continua con la funcion mostrar de la clase base
 	.mostrar(_configuracion)
 
+func ocultar():
+	mostrar_vida(0)
+	mostrar_equipamiento([])
+	.ocultar()
+
 func obtener_unidad(_configuracion):
 	var unidad_id = _configuracion["unidad_a_mostrar_id"]
 	return instance_from_id(unidad_id)
@@ -37,6 +42,8 @@ func mostrar_vida(_vida):
 
 func mostrar_equipamiento(equipamiento):
 	var items_list = items.find_node(ITEMS_LIST_NAME)
+	
+	AuxiliarNode.remove_children(items_list)
 
 	for item in equipamiento:
 		var item_label = Label.new()

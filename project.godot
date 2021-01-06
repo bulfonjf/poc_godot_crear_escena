@@ -25,6 +25,7 @@ Data="*res://contextos/data.gd"
 Diccionario="*res://auxiliares/diccionario.gd"
 SeleccionUnidad="*res://procesador_acciones/seleccion_unidad.gd"
 CreadorEscena="*res://creador_de_escena/creador_escena.gd"
+AuxiliarNode="*res://auxiliares/node.gd"
 
 [editor_plugins]
 
