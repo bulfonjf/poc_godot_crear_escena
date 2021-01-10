@@ -6,6 +6,7 @@ func test_mostrar_menu_unidad():
     watch_signals(CreadorEscena)
 
     CreadorEscena\
+    .iniciar()\
     .mostrar_menu_unidad()\
     .build()
 
