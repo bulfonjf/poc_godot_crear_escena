@@ -4,6 +4,7 @@ onready var ataque_boton : Button = $VBoxContainer/Atacar
 onready var mover_boton : Button = $VBoxContainer/Mover
 var _unused
 const mostrar_componente = "mostrar"
+const deshabilitar = "deshabilitar"
 
 # Signals
 signal click_atacar(accion)
@@ -18,11 +19,16 @@ func _ready():
 
     self.agregar_hijo(ataque_boton.get_instance_id())
     self.agregar_hijo(mover_boton.get_instance_id())
+    
+    # Preparar la configuracion por defecto de los hijos
     self.configuracion[ataque_boton.name.to_lower()] = {
-        mostrar_componente: true
+        mostrar_componente: true,
+        deshabilitar: false
+
     }
     self.configuracion[mover_boton.name.to_lower()] = {
-        mostrar_componente: true
+        mostrar_componente: true,
+        deshabilitar: false
     }
 
 func _on_atacar_pressed():

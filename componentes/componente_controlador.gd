@@ -14,16 +14,23 @@ func aplicar_configuracion(_configuracion = {"mostrar": false}):
 		self.ocultar()
 
 func mostrar(_configuracion = {}):
-	Diccionario.unir(_configuracion, configuracion)
+	var configurar_local = configuracion.duplicate()
+	Diccionario.unir(_configuracion, configurar_local)
 
 	for hijo_id in hijos:
 		var hijo = instance_from_id(hijo_id)
 		var hijo_nombre = hijo.name.to_lower()
-		if configuracion.has(hijo_nombre):
-			if configuracion[hijo_nombre].mostrar:
-				hijo.mostrar(configuracion[hijo_nombre])
+		if configurar_local.has(hijo_nombre):
+			if configurar_local[hijo_nombre].mostrar:
+				hijo.mostrar(configurar_local[hijo_nombre])
 			else:
 				hijo.ocultar()
+
+	if configurar_local.has("deshabilitar"):
+		if configurar_local["deshabilitar"]:
+			self.disabled = true
+		else:
+			self.disabled = false
 
 	self.show()
 
