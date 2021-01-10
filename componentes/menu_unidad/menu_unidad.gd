@@ -24,7 +24,6 @@ func _ready():
     self.configuracion[ataque_boton.name.to_lower()] = {
         mostrar_componente: true,
         deshabilitar: false
-
     }
     self.configuracion[mover_boton.name.to_lower()] = {
         mostrar_componente: true,

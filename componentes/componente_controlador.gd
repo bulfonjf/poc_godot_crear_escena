@@ -4,8 +4,8 @@ var hijos = []
 
 var configuracion = {}
 
-func agregar_hijo(hijo):
-	hijos.append(hijo)
+func agregar_hijo(hijo_id):
+	hijos.append(hijo_id)
 
 func aplicar_configuracion(_configuracion = {"mostrar": false}):
 	if _configuracion["mostrar"]:
@@ -28,6 +28,7 @@ func mostrar(_configuracion = {}):
 
 	if configurar_local.has("deshabilitar"):
 		if configurar_local["deshabilitar"]:
+			# to-do: esta forma de deshabilitar solo funciona con botones
 			self.disabled = true
 		else:
 			self.disabled = false

@@ -1,12 +1,14 @@
 extends Node
 
-# Componentes
+# Keys de configuracion de componentes
 const mostrar_componente = "mostrar"
 const deshabilitar = "deshabilitar"
-var menu_unidad = "menu_unidad"
-var menu_lateral_mapa = "menu_lateral_mapa"
-var info_unidad = "info_unidad"
-var ataque = "ataque"
+
+# Componentes
+const menu_unidad = "menu_unidad"
+const menu_lateral_mapa = "menu_lateral_mapa"
+const info_unidad = "info_unidad"
+const ataque = "ataque"
 
 # Signals
 signal mostrar_menu_unidad_signal(_configuracion)
